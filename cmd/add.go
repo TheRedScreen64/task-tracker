@@ -1,8 +1,9 @@
 package cmd
 
 import (
-	"fmt"
+	"errors"
 
+	"github.com/TheRedScreen64/task-tracker/internal/task"
 	"github.com/spf13/cobra"
 )
 
@@ -11,8 +12,11 @@ var addCmd = &cobra.Command{
 	Short:   "Add a task",
 	Example: `task-tracker add "Buy groceries"`,
 	RunE: func(cmd *cobra.Command, args []string) error {
-		fmt.Println("add called")
-		return nil
+		if len(args) == 0 {
+			return errors.New("task description is required")
+		}
+
+		return task.AddTask(args[0])
 	},
 }
 

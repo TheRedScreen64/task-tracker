@@ -1,8 +1,7 @@
 package cmd
 
 import (
-	"fmt"
-
+	"github.com/TheRedScreen64/task-tracker/internal/task"
 	"github.com/spf13/cobra"
 )
 
@@ -14,8 +13,11 @@ var listCmd = &cobra.Command{
     task-tracker list in-progress
     task-tracker list done`,
 	RunE: func(cmd *cobra.Command, args []string) error {
-		fmt.Println("list called")
-		return nil
+		if len(args) > 0 {
+			return task.ListTasks(args[0])
+		}
+
+		return task.ListTasks("")
 	},
 }
 
