@@ -50,9 +50,9 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           files: |
-            task-tracker-linux-amd64
-            task-tracker-linux-arm64
-            task-tracker-windows-amd64.exe
-            task-tracker-windows-arm64.exe
+            task-tracker-linux-amd64/task-tracker-linux-amd64
+            task-tracker-linux-arm64/task-tracker-linux-arm64
+            task-tracker-windows-amd64/task-tracker-windows-amd64.exe
+            task-tracker-windows-arm64/task-tracker-windows-arm64.exe
           draft: true
           generate_release_notes: true
