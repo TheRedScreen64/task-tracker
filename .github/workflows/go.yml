@@ -48,6 +48,10 @@ jobs:
       - name: Release
         uses: softprops/action-gh-release@v2
         with:
-          files: bin/*
+          files: |
+            bin/task-tracker-linux-amd64
+            bin/task-tracker-linux-arm64
+            bin/task-tracker-windows-amd64.exe
+            bin/task-tracker-windows-arm64.exe
           draft: true
           generate_release_notes: true
